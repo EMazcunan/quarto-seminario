@@ -1,0 +1,9 @@
+body {
+  --presentation-heading-color: #447099;
+  --ex-bg: #fcd49b;
+}
+
+figure, figure figcaption {
+  display: inline-block!important;
+  text-align: center!important;
+}

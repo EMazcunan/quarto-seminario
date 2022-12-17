@@ -1,0 +1,21 @@
+{
+    "spellright.language": [
+        "en_US",
+        "es_ES"
+    ],
+    "spellright.documentTypes": [
+        "doctex",
+        "quarto",
+        "markdown",
+        "latex",
+        "plaintext"
+    ],
+    "spellright.parserByClass": {
+        "quarto": {
+            "parser": "markdown"
+        },
+        "doctex": {
+            "parser": "latex"
+        }
+    }
+}

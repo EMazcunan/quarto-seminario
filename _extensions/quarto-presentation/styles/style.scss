@@ -1,0 +1,100 @@
+/*-- scss:defaults --*/
+$body-bg: #fff;
+$body-color: #222;
+$presentation-heading-color: #447099;
+$code-color: #5c7c3f;
+//$code-color: lighten($body-color, 20%);
+$link-color: #f75035;
+$code-block-font-size: 0.8em;
+
+// alternate colors for when the background changes
+$light-bg-text-color: $body-color;
+$dark-bg-text-color: $body-bg;
+$light-bg-link-color: $link-color;
+$dark-bg-link-color: #42affa !default;
+$light-bg-code-color: $code-color;
+$dark-bg-code-color: #ffa07a !default;
+
+
+/*-- scss:rules --*/
+
+/*
+ * Clase `.fade-in-then-remove`
+ * El elemento desaparece cuando no es 
+ * Ejemplo: Fragmento que aparece únicamente en la segunda transición.
+ * [Lorem ipsum]{.fragment fragment-index=2 .fade-in-then-remove}
+ */
+.reveal .fragment.fade-in-then-remove:not(.current-fragment) {
+  display: none;
+}
+
+/*
+ * Clase `.card`.
+ * Fondo blanco letra negra.
+ */
+.reveal .card {
+  color: $body-color;
+  background-color: $body-bg;
+  border: 20px solid $body-bg;
+  border-radius: 20px;
+  margin-bottom: 0.6em;
+}
+
+
+
+.reveal section.has-light-background {
+  color: $body-color;
+}  
+
+.reveal section.has-light-background {
+  color: $body-color;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $presentation-heading-color;
+  }
+} 
+
+.reveal .quarto-title-authors {
+  padding-top: 5%;
+}
+
+.reveal .quarto-title-affiliation {
+  padding-top: 10%;
+}
+
+.reveal .date {
+  padding-top: 5%;
+  font-size: 0.7em;
+}
+
+
+.reveal div.iframe-container {
+  border: 1px solid gray;
+  position: relative;
+  margin-bottom:20px;
+}
+.reveal div.iframe-container input.refresh {
+  position: absolute;
+  bottom: -20px;
+  right:0;
+  margin:0;
+  padding:0;
+  opacity:0.5;
+  font-family: Lucida Sans Unicode;
+  z-index: 2;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+.reveal div.iframe-container iframe {
+  position:relative!important;
+  max-width: none;
+  max-height: none;
+}

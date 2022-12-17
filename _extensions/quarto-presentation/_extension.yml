@@ -1,0 +1,19 @@
+title: quarto-presentation
+author: Eva María Mazcuñán Navarro
+version: 0.1.0
+contributes:
+  format: 
+      revealjs:
+          theme: [simple, styles/style.scss]
+          incremental: true
+          #toc: true
+          #toc-depth: 1
+          #toc-title: "Índice"
+          title-slide-attributes:
+            data-background-color: "#447099"  
+          link-external-icon: true    
+          link-external-newwindow: true  
+          preview-links: auto
+          fig-align: center
+          date-format: long        
+              

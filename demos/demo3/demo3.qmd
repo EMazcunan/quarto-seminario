@@ -1,0 +1,12 @@
+---
+title: Introducción a Quarto 
+author: Eva María Mazcuñán Navarro
+format:
+    html: 
+        theme: slate
+    pdf:
+        keep-tex: true
+---
+
+
+Hola Quarto

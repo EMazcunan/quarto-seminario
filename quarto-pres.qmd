@@ -1,0 +1,1699 @@
+---
+title: Introducción a Quarto 
+author: Eva María Mazcuñán Navarro
+institute:  Seminario de experiencias docentes <br> Departamento de Matemáticas [ ]{style="height:5px;width:5px;background-color:white;border-radius:50%;border:1px solid;display:inline-block;vertical-align:middle;margin:10px;"} Universidad de León 
+date: 2022-12-20 
+lang: es
+format: 
+    quarto-presentation-revealjs:
+        title-slide-attributes:
+            data-background-image: "images/quarto-logo.png"
+            data-background-size: "15%"
+            data-background-position: 97% 97%
+        # footer: "{{< fa brands github >}}" 
+        # logo: images/quarto.png
+        css: "styles/style.css"
+        filters:
+            - filters/include-code-files.lua      
+    pdf:
+        keep-tex: true
+        toc: true
+execute: 
+  eval: false
+  echo: true
+engine: knitr  
+editor:
+    render-on-save: true    
+---
+
+# ¿Qué es Quarto? {background-color=var(--presentation-heading-color)}
+
+## Quarto 
+ 
+
+![](images/quarto-logo.png){.r-strecht fig-align="center"}
+
+::: {style="text-align:center"}
+[quarto.org](https://quarto.org)
+:::
+
+\
+
+
+> Quarto is an open-source scientific and technical publishing system built on Pandoc. 
+
+
+
+## Pandoc
+
+![](images/swiss.jpg){.r-strecht fig-align="center"}
+
+
+::: {style="text-align:center"}
+[pandoc.org](https://pandoc.org/)
+:::
+
+\
+
+> If you need to convert files from one markup format into another, pandoc is your swiss-army knife.
+
+
+## Cómo funciona Quarto
+
+\
+
+![](images/qmd-how-it-works-simple.png){.r-stretch fig-align="center"}
+
+. . . 
+
+\
+
+::: {style="text-align:center"}
+`qmd` = Quarto Markdown
+::: 
+
+
+## Markdown
+
+
+![](images/md.png){.r-strecht fig-align="center"}
+
+::: {style="text-align:center"}
+[markdownguide.org](https://www.markdownguide.org/)
+:::
+
+\ 
+
+> Markdown allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid XHTML (or HTML).
+
+-- <cite>[John Gruber](https://daringfireball.net/projects/markdown/)</cite>
+
+\
+
+
+## Markdown - Ejemplo
+
+:::: {.nonincremental}
+
+:::{.fragment}
+\
+
+LaTeX
+:    
+    ```{tex, "code-line-numbers"=FALSE}
+    \texit{Texto en itálica}
+    ```
+:::
+
+
+:::{.fragment}
+\
+
+HTML
+: 
+    ```{html "code-line-numbers"=FALSE}
+    <i>Texto en itálica</i>
+    ```
+
+:::
+
+
+\
+
+
+:::{.fragment}
+
+Markdown
+: 
+    ```{md "code-line-numbers"=FALSE}
+    _Texto en itálica_
+    ```
+:::
+
+::::
+
+
+# Tipos de documentos {background-color=var(--presentation-heading-color)}
+
+## Artículos - HTML + PDF
+
+```{=html}
+<div class="r-stretch iframe-container">    
+<input class="refresh" type="button" value="&#x21bb;" onclick="var ifr=document.getElementById('gallery-html'); ifr.src=ifr.src;">
+<iframe  width="100%" height="100%" src="demos/gallery-html/gallery-html.html" id="gallery-html" >
+</iframe>
+</div>
+```
+
+## Libros - HTML + PDF
+
+```{=html}
+<div class="r-stretch iframe-container">    
+<input class="refresh" type="button" value="&#x21bb;" onclick="var ifr=document.getElementById('ml3book'); ifr.src=ifr.src;">
+<iframe  width="100%" height="100%" src="https://mlr3book.mlr-org.com/" id="mlr3book" >
+</iframe>
+</div>
+```
+
+## Páginas webs o blogs
+
+```{=html}
+<div class="r-stretch iframe-container">    
+<input class="refresh" type="button" value="&#x21bb;" onclick="var ifr=document.getElementById('beamilz'); ifr.src=ifr.src;">
+<iframe  width="100%" height="100%" src="https://beamilz.com/" id="beamilz" >
+</iframe>
+</div>
+```
+
+## Presentaciones
+
+```{=html}
+<div class="r-stretch iframe-container">    
+<input class="refresh" type="button" value="&#x21bb;" onclick="var ifr=document.getElementById('revealjs'); ifr.src=ifr.src;">
+<iframe  width="100%" height="100%" src="https://quarto.org/docs/presentations/revealjs/demo/#/title-slide" id="revealjs" >
+</iframe>
+</div>
+```
+
+
+# Primeros pasos  {background-color=var(--presentation-heading-color)}
+
+
+## Documentación
+
+
+::: {layout="[[-1],[1],[-1]]" style="text-align:center;font-size:2em;"}
+[quarto.org](https://quarto.org)
+:::
+
+## Instalación 
+
+
+\
+[**PASO 1**]{style="color:var(--presentation-heading-color);"}
+ 
+
+::: {layout="[40, 60]"}
+
+Instalar Quarto
+
+
+[Página de descargas de Quarto](https://quarto.org/docs/get-started/ "https://quarto.org/docs/get-started")
+
+:::
+
+. . . 
+
+\
+
+[**PASO 2**]{style="color:var(--presentation-heading-color);"}
+
+::: {layout="[40, 60]" layout-align="center" layout-valign="bottom" } 
+
+Herramienta\
+edición y compilación 
+
+
+![](images/vscode-logo.png){height="1em" style="vertical-align:bottom"} [Visual Studio Code](https://code.visualstudio.com/ "https://code.visualstudio.com/")\
+con extensión [Quarto](https://marketplace.visualstudio.com/items?itemName=quarto.quarto)
+
+:::
+
+## {background-image="images/vscode-render2.png" background-size="cover" background-position="0 0" data-menu-title="VS Code"}
+
+
+
+## Ejemplo `.qmd`
+
+\
+
+::: {.fragment fragment-index=1 .fade-in-then-remove}
+```{md}
+#| file: "demos/demo1/demo1.qmd"
+```
+:::
+
+::: {.fragment fragment-index=2 .fade-in-then-remove}
+```{md}
+#| file: "demos/demo1/demo1.qmd"
+#| code-line-numbers: "1-4"
+```
+:::
+
+
+::: {.fragment fragment-index=2 .fade-in-then-remove}
+
+\
+
+Cabecera YAML
+:::
+
+::: {.fragment fragment-index=3 .fade-in-then-remove}
+```{md}
+#| file: "demos/demo1/demo1.qmd"
+#| code-line-numbers: "6"
+```
+:::
+
+
+::: {.fragment fragment-index=3 .fade-in-then-remove}
+
+\
+
+Contenidos (Markdown)
+:::
+
+
+## Resultado
+
+```{=html}
+<div class="r-stretch iframe-container">    
+<input class="refresh" type="button" value="&#x21bb;" onclick="var ifr=document.getElementById('demo1'); ifr.src=ifr.src;">
+<iframe  width="100%" height="100%" src="demos/demo1/demo1.html" id="demo1" >
+</iframe>
+</div>
+```
+
+
+## Varios formatos
+
+\
+
+::: {.fragment fragment-index=1 .fade-in-then-remove}
+```{md}
+#| file: "demos/demo2/demo2.qmd"
+```
+:::
+
+::: {.fragment fragment-index=2 .fade-in-then-remove}
+```{md}
+#| file: "demos/demo2/demo2.qmd"
+#| code-line-numbers: "4-6"
+```
+:::
+
+
+## Resultado
+
+```{=html}
+<div class="r-stretch iframe-container">    
+<input class="refresh" type="button" value="&#x21bb;" onclick="var ifr=document.getElementById('demo2'); ifr.src=ifr.src;">
+<iframe  width="100%" height="100%" src="demos/demo2/demo2.html" id="demo2" >
+</iframe>
+</div>
+```
+
+
+
+## Formatos con opciones
+
+\
+
+::: {.fragment fragment-index=1 .fade-in-then-remove}
+```{md}
+#| file: "demos/demo3/demo3.qmd"
+```
+:::
+
+::: {.fragment fragment-index=2 .fade-in-then-remove}
+```{md}
+#| file: "demos/demo3/demo3.qmd"
+#| code-line-numbers: "6"
+```
+:::
+
+
+::: {.fragment fragment-index=2 .fade-in-then-remove}
+```{md}
+#| file: "demos/demo3/demo3.qmd"
+#| code-line-numbers: "8"
+```
+:::
+
+\
+
+[Cambia el aspecto (tema) del HTML]{.fragment fragment-index=2 .fade-in-then-remove}
+
+[Conserva el archivo `.tex` generado]{.fragment fragment-index=3 .fade-in-then-remove}
+
+
+## Resultado
+
+## Resultado
+
+```{=html}
+<div class="r-stretch iframe-container">    
+<input class="refresh" type="button" value="&#x21bb;" onclick="var ifr=document.getElementById('demo3'); ifr.src=ifr.src;">
+<iframe  width="100%" height="100%" src="demos/demo3/demo3.html" id="demo3" >
+</iframe>
+</div>
+```
+
+
+## Tema claro/oscuro
+
+\
+
+::: {.fragment fragment-index=1 .fade-in-then-remove}
+```{md}
+#| file: "demos/demo4/demo4.qmd"
+```
+:::
+
+::: {.fragment fragment-index=1 .fade-in-then-remove}
+```{md}
+#| file: "demos/demo4/demo4.qmd"
+#| code-line-numbers: "6-8"
+```
+:::
+
+
+## Resultado
+
+```{=html}
+<div class="r-stretch iframe-container">    
+<input class="refresh" type="button" value="&#x21bb;" onclick="var ifr=document.getElementById('demo4'); ifr.src=ifr.src;">
+<iframe  width="100%" height="100%" src="demos/demo4/demo4.html" id="demo4" >
+</iframe>
+</div>
+```
+
+
+# Secciones {background-color=var(--presentation-heading-color)}
+
+
+## Crear secciones
+
+\
+
+Sintaxis | Resultado
+--| ------
+`# Título` | Encabezado nivel 1
+`## Título` | Encabezado nivel 2
+`### Título` | Encabezado nivel 3
+... |
+`###### Título` | Encabezado nivel 6
+
+
+## {background-color=var(--ex-bg) .center}
+
+
+Añade dos secciones escribiendo en tu documento:
+
+\
+
+```{md "code-line-numbers"=FALSE}
+# Primera sección
+
+Lorem ipsum
+
+# Segunda sección
+
+Dolor sit amet
+
+```
+
+
+## Secciones numeradas
+
+\
+
+```{yaml "code-line-numbers"=FALSE}
+number-sections: true
+```
+
+## Tabla de contenidos
+
+\
+
+```{yaml "code-line-numbers"=FALSE}
+toc: true
+```
+
+. . . 
+
+\
+
+Se puede personalizar la posición 
+
+```{yaml "code-line-numbers"=FALSE}
+toc-location: left
+```
+
+
+##  {background-color=var(--ex-bg) .center}
+
+Numera las secciones de tu documento y crea una tabla de contenidos usando
+
+\
+
+```{yaml "code-line-numbers"=FALSE}
+number-sections: true
+toc: true
+```
+
+# Idioma {background-color=var(--presentation-heading-color)}
+
+## Idioma del documento 
+
+\
+
+La opción `lang` permite cambiar el idioma del documento y proporciona traducciones para textos predefinidos como:
+
+::: {.nonincremental}
+- Table of contents
+- Figure
+- ...
+:::
+
+```{yaml "code-line-numbers"=FALSE}
+lang: es
+```
+
+
+## Traducciones alternativas
+
+\
+
+La opción `language` permite personalizar las traducciones automáticas del lenguaje especificado con `lang`.
+
+\ 
+
+```{yaml "code-line-numbers"=FALSE}
+lang: es
+language: 
+    toc-title-document: "Índice" # defecto "Tabla de Contenidos"
+    crossref-fig-title: "Imagen" # defecto "Figura"
+```
+
+::: footer
+Puedes consultar todos los valores personalizables vía la opción `language` [aquí](https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/language/_language.yml)
+:::
+
+## {background-color=var(--ex-bg) .center}
+
+Establece español como idioma del documento usando
+```{yaml "code-line-numbers"=FALSE}
+lang: es
+```
+y observa que el título para la tabla de contenidos está ahora en español.
+
+. . . 
+
+\
+
+Cambia el título de la tabla de contenidos a "Índice" usando
+```{yaml "code-line-numbers"=FALSE}
+language: 
+    toc-title-document: "Índice"
+```
+
+
+# Espaciado {background-color=var(--presentation-heading-color)}
+
+## Horizontal (entre palabras)
+
+\
+
+```{md "code-line-numbers"=FALSE}
+aaa bbb  ccc    ddd             eee
+```
+
+aaa bbb  ccc    ddd             eee 
+
+. . . 
+
+\
+
+```{md "code-line-numbers"=FALSE}
+aaa bbb \ ccc \ \ ddd \ \ \ \ \ eee
+```
+
+aaa bbb \ ccc \ \ ddd \ \ \ \ \ eee
+
+
+## Vertical: Nueva línea
+
+\
+
+
+```{md "code-line-numbers"=FALSE}
+Lorem ipsum.\
+Dolor sit amet.
+```
+Lorem ipsum.\
+Dolor sit amet.
+
+
+## Vertical: Nuevo párrafo
+
+\
+
+```{md "code-line-numbers"=FALSE}
+Lorem ipsum.
+
+Dolor sit amet.
+```
+Lorem ipsum.
+
+Dolor sit amet.
+
+. . . 
+
+\
+
+```{md "code-line-numbers"=FALSE}
+Lorem ipsum.
+
+
+
+Dolor sit amet.
+```
+
+## Vertical: Líneas en blanco
+
+\ 
+
+
+```{md "code-line-numbers"=FALSE}
+Lorem ipsum.
+
+\
+\
+Dolor sit amet.
+```
+
+
+Lorem ipsum.
+
+\
+\
+Dolor sit amet.
+
+# Ecuaciones {background-color=var(--presentation-heading-color)}
+
+## Ecuaciones: LaTeX
+
+\
+
+Sintaxis | Resultado
+---|------
+`$ ... $` | Modo _inline_
+`$$ ... $$`| Modo _display_ 
+
+::: footer
+Ver [más sobre ecuaciones](https://quarto.org/docs/authoring/markdown-basics.html#equations) en la documentación de Quarto.
+:::
+
+## {background-color=var(--ex-bg) .center}
+
+Añade una sección de título "Ecuaciones" y escribe el código que genere la siguiente salida:
+
+::: {.card}
+Se llega a  $x^2 = 4$, de donde $x=\pm 2$.
+:::
+
+
+<details>
+    <summary>
+**Solución**
+    </summary>
+
+```{latex "code-line-numbers"=FALSE}
+Se llega a  $x^2 = 4$, de donde $x = \pm 2$.
+```
+</details>
+
+## {background-color=var(--ex-bg) .center}
+
+Escribe el código que genere la siguiente salida:
+
+::: {.card}
+La identidad de Euler es:
+$$
+    e^{ i \pi } + 1 = 0
+$$
+:::
+
+<details>
+    <summary>
+**Solución**
+    </summary>
+
+```{latex "code-line-numbers"=FALSE}
+La identidad de Euler es:
+$$
+    e^{ i \pi } + 1 = 0
+$$
+```
+</details>
+
+# Formato de texto {background-color=var(--presentation-heading-color)}
+
+---
+
+\ 
+
+Sintaxis | Resultado |
+------ | ---- | ----
+` *aaa* ` <br> ` _aaa_ ` | _aaa_ | (itálica)
+[` **aaa** ` <br>  ` __aaa__ ` ]{.fragment fragment-index=2} |  [__aaa__]{.fragment fragment-index=2} | [(negrita)]{.fragment fragment-index=2}
+[`` `aaa` ``]{.fragment fragment-index=3} | [`aaa`]{.fragment fragment-index=3} | [(verbatim)]{.fragment fragment-index=3}
+[` [aaa]{.smallcaps} `]{.fragment fragment-index=4} |   [[aaa]{.smallcaps}]{.fragment fragment-index=4} | [(_small caps_)]{.fragment fragment-index=4}
+||
+
+## {background-color=var(--ex-bg) .center}
+
+Escribe el código para conseguir el siguiente resultado:
+
+::: {.card}
+_Quarto_ se basa en _Pandoc_ y usa su variante de _markdown_ en la sintaxis de sus documentos.
+
+_Markdown_ es un formato de texto plano diseñado para ser __fácil de escribir__ y sobre todo __fácil de leer__.
+:::
+
+<details>
+    <summary>
+**Solución**
+    </summary>
+
+```{md "code-line-numbers"=FALSE}
+_Quarto_ se basa en _Pandoc_ y usa su variante de _markdown_ en la sintaxis de sus documentos.
+
+_Markdown_ es un formato de texto plano diseñado para ser __fácil de escribir__ y sobre todo __fácil de leer__.
+```
+</details>
+
+# Listas {background-color=var(--presentation-heading-color)}
+
+## Listas no numeradas
+
+\ 
+
+
+```{md "code-line-numbers"=FALSE}
+- Un item
+- Otro item
+- Otro item más
+```
+
+\
+
+. . . 
+
+También pueden usarse `*` y `+`
+
+\
+
+. . . 
+
+Hay que dejar **líneas en blanco** antes y después de la lista.
+
+\
+
+. . . 
+
+Opcionalmente línea en blanco entre items (afecta al espaciado).
+
+
+## {background-color=var(--ex-bg) .center}
+
+Escribe el código para conseguir el siguiente resultado:
+
+::: {.card .nonincremental}
+- Quarto
+- Pandoc
+- Markdown
+:::
+
+<details>
+    <summary>
+**Solución**
+    </summary>
+
+```{md "code-line-numbers"=FALSE}
+- Quarto
+- Pandoc
+- Markdown
+```
+</details>
+
+## Listas numeradas
+
+\
+
+```{md "code-line-numbers"=FALSE}
+1. Primer item
+2. Segundo item 
+3. Tercer item
+```
+
+::: {.nonincremental}
+1. Primer item
+2. Segundo item 
+3. Tercer item
+:::
+
+. . . 
+
+```{md "code-line-numbers"=FALSE}
+1. Primer item
+1. Segundo item 
+1. Tercer item
+
+```
+
+
+## Listas numeradas
+ 
+\ 
+
+```{md "code-line-numbers"=FALSE}
+a. Primer item
+b. Segundo item 
+c. Tercer item
+```
+
+::: {.nonincremental}
+a. Primer item
+b. Segundo item 
+c. Tercer item
+:::
+
+. . . 
+
+```{md "code-line-numbers"=FALSE}
+a. Primer item
+a. Segundo item 
+a. Tercer item
+```
+
+
+
+
+## {background-color=var(--ex-bg) .center}
+
+Comprueba que los siguientes fragmentos de código producen listas convenientemente numeradas:
+
+\
+
+```{md "code-line-numbers"=FALSE}
+1. Primer item
+2. Segundo item 
+2. Tercer item
+```
+
+\ 
+
+```{md "code-line-numbers"=FALSE}
+a. Primer item
+a. Segundo item 
+b. Tercer item
+```
+
+
+## Listas anidadas:
+
+\
+
+```{md "code-line-numbers"=FALSE}
+1. Primer item
+    a. Subitem a
+    a. Subitem b
+1. Segundo item 
+1. Tercer item
+```
+
+
+
+::: {.nonincremental}
+1. Primer item
+    a. Subitem a
+    a. Subitem b
+1. Segundo item 
+1. Tercer item
+:::
+
+
+## Listas descriptivas
+
+\ 
+
+::: {.nonincremental}
+Término 1
+: Descripción del término 1
+
+Término 2
+: Descripción del término 2
+::: 
+
+
+\
+
+. . .
+
+
+```{md "code-line-numbers"=FALSE}
+Término 1
+: Descripción del término 1
+
+Término 2
+: Descripción del término 2
+```
+
+
+## {background-color=var(--ex-bg) .scrollable}
+
+Escribe el código para conseguir el siguiente resultado:
+
+::: {.card .nonincremental}
+Pandoc
+: Conversor de todo a todo.
+
+Markdown
+: Fácil de leer y de escribir.
+:::
+
+<details>
+    <summary>
+**Solución**
+    </summary>
+
+```{md "code-line-numbers"=FALSE}
+Pandoc
+: Conversor de todo a todo.
+
+Markdown
+: Fácil de leer y de escribir.
+```
+</details>
+
+
+
+
+# Tablas {background-color=var(--presentation-heading-color)}
+
+## Tablas: Sintaxis básica 
+
+\
+
+```{md "code-line-numbers"=FALSE}
+Encabezado 1 | Encabezado 2
+-------------|-------------
+aaa          | bbb
+ccc          | ddd
+```
+
+\
+
+Encabezado 1 | Encabezado 2
+-------------|-------------
+aaa          | bbb
+ccc          | ddd
+
+
+## Tablas: Sintaxis básica
+
+\
+
+No es preciso que los caracteres `|` estén alineados
+
+\
+
+
+```{md "code-line-numbers"=FALSE}
+Encabezado 1 | Encabezado 2
+--- | ---
+aaa | bbb
+ccc| ddd
+```
+
+
+
+## {background-color=var(--ex-bg)  .scrollable}
+
+Escribe el código para conseguir el siguiente resultado:
+
+::: {.card .nonincremental}
+Nombre | Apellidos
+--- | ---
+Antonio | Pérez González
+Bernardo | García Pérez
+César | González García
+:::
+
+<details>
+    <summary>
+**Solución**
+    </summary>
+
+```{md "code-line-numbers"=FALSE}
+Nombre | Apellidos
+--- | ---
+Antonio | Pérez González
+Bernardo | García Pérez
+César | González García
+```
+</details>
+
+
+## {background-color=var(--ex-bg)  .scrollable}
+
+Duplica la tabla anterior y modifica los delimitadores del encabezado así:
+
+```{md "code-line-numbers"=FALSE}
+Nombre | Apellidos
+---: | :---:
+Ana | Pérez González
+Bernardo | García Pérez
+Carlos | González García
+```
+ 
+¿Qué resultado aprecias?
+
+<details>
+    <summary>
+**Solución**
+    </summary>
+El resultado es
+
+Nombre | Apellidos
+---: | :---:
+Ana | Pérez González
+Bernardo | García Pérez
+Carlos | González García
+
+La primera columna queda alineada a la derecha (por `---:`).
+
+Y la segunda columna queda centrada (por `:---:`).
+</details>
+
+## {background-color=var(--ex-bg)  .scrollable}
+Crea una tabla en la que el contenido de las celdas de la segunda columna, supere la anchura de una línea.
+
+Por ejemplo:
+
+Herramienta | Descripción
+--- | ---
+LaTeX | Sistema tipográfico de alta calidad   para la producción de documentos técnicos y científicos.
+Quarto | Sistema para la producción  de documentos técnicos y científicos basado en Pandoc.
+
+## {background-color=var(--ex-bg)  .scrollable}
+
+Deja una línea en blanco después de la tabla creada y, en la siguiente línea, escribe 
+
+```{md "code-line-numbers"=FALSE}
+: {tbl-colwidths="[20,80]"}
+```
+
+¿Qué consigues?
+
+<details>
+    <summary>
+**Solución**
+    </summary>
+El resultado es
+
+Herramienta | Descripción
+--- | ---
+LaTeX | Sistema tipográfico de alta calidad   para la producción de documentos técnicos y científicos.
+Quarto | Sistema para la producción  de documentos técnicos y científicos basado en Pandoc.
+
+: {tbl-colwidths="[20,80]"}
+
+Se trata de la misma tabla con columnas de anchura $20\%$ y $80\%$ (por `tbl-colwidths="[20,80]"`).  
+</details>
+
+
+# Links e Imágenes {background-color=var(--presentation-heading-color)}
+
+## Links
+
+\ 
+
+Sintaxis | Resultado 
+---|--- 
+[`<https://quarto.org> `]{style="font-size:0.85em"} | <https://quarto.org> 
+[`[Quarto](https://quarto.org)`]{.fragment fragment-index=2 style="font-size:0.85em"} |  [[Quarto](https://quarto.org/)]{.fragment fragment-index=2} 
+[`[Quarto](https://quarto.org/ "Web de Quarto")`]{.fragment fragment-index=3 style="font-size:0.85em"} |  [[Quarto](https://quarto.org/ "Web de Quarto")]{.fragment fragment-index=3} 
+
+: {tbl-colwidths="[60,40]"}
+
+
+## {background-color=var(--ex-bg) .center}
+
+Escribe el código necesario para crear el siguiente resultado, donde el link abre `https://quarto.org`
+
+::: {.card}
+Puedes consultar la documentación de Quarto [aquí](https://quarto.org).
+:::
+
+<details>
+    <summary>
+**Solución**
+    </summary>
+
+```{md "code-line-numbers"=FALSE}
+Puedes consultar la documentación de Quarto [aquí](https://quarto.org).
+```
+</details>
+
+
+
+## Imágenes: Sintaxis básica
+
+\
+
+`![](<ruta del archivo>)`
+
+\ 
+
+. . . 
+
+__Ejemplo__
+
+```{md "code-line-numbers"=FALSE}
+![](images/quarto-logo.png)
+```
+
+![](images/quarto-logo.png)
+
+
+
+## {background-color=var(--ex-bg) .scrollable}
+
+Descarga el logo de Quarto de\ 
+<https://quarto.org/quarto.png>\
+y guárdalo en la ubicación oportuna para que funcione el código siguiente:
+
+
+``` {md "code-line-numbers"=FALSE}
+El logo de Quarto es ![](images/quarto.png)
+```
+
+
+<details>
+    <summary>
+**Solución**
+    </summary>
+
+La imagen debe llamarse `quarto.png` y estar ubicada en una carpeta de nombre `images` dentro del directorio del documento `quarto-ejemplo.qmd`.
+
+</details>
+
+## Imágenes: Sintaxis general
+
+\
+
+`![<Texto>](<ruta del archivo>){<opciones>}`
+
+\ 
+
+. . . 
+
+__Ejemplo__
+
+```{md "code-line-numbers"=FALSE}
+![Logo de Quarto](images/quarto-logo.png){
+    fig-align=center
+    width="5%"
+}
+```
+
+![Logo de Quarto](images/quarto-logo.png){
+    fig-align=center
+    width="5%"
+}
+
+
+
+
+
+:::{.notes}
+El texto solo aparece como _caption_ si la imagen ocupa su propio párrafo (entre dos líneas vacías). En otro caso sólo se utiliza en HTML, como texto alternativo a mostrar cuando no se encuentra la imagen.
+:::
+
+
+
+## {background-color=var(--ex-bg) .scrollable}
+
+Duplica el código anterior para incluir el logo de Quarto y modifícalo así:
+
+
+``` {md "code-line-numbers"=FALSE}
+El logo de Quarto es
+
+![](images/quarto.png){
+    fig-align="center"
+    width="20%"
+}
+```
+
+¿Qué cambios aprecias?
+
+
+<details>
+    <summary>
+**Solución**
+    </summary>
+
+La imagen queda centrada (por `fig-align="center"`) y ocupa el `20%` de la anchura de la página (por `width="20%"`).
+
+</details>
+
+# Vídeos {background-color=var(--presentation-heading-color)}
+
+## Vídeos: Sintaxis básica
+
+\
+
+``` {shortcodes=false}
+{{< video <ruta> >}}
+```
+
+\
+
+. . . 
+
+__Ejemplos__
+
+``` {md "code-line-numbers"=FALSE}
+{{< video https://youtu.be/gsw-de5xcCU >}}
+```
+
+. . . 
+
+
+``` {md "code-line-numbers"=FALSE}
+{{< video videos/video.mp4 >}}
+```
+
+
+## {background-color=var(--ex-bg) .center .scrollable style="text-align:center;"}
+
+Busca cualquier vídeo en YouTube,<br> obtén su URL con el botón **Compartir**, <br> e inclúyelo en tu documento con la sintaxis
+
+:::{style="width:100%; text-align:center"} 
+```{shortcodes=false style="background-color:var(--ex-bg)!important; display:inline-block;width:fit-content;"} 
+{{< video ... >}}
+```
+:::
+
+
+
+
+# Callouts {background-color=var(--presentation-heading-color)}
+
+
+---
+
+\ 
+
+::: {.callout-note}
+Los _callouts_ son una forma de destacar contenidos.  
+:::
+
+\ 
+
+. . . 
+
+``` {md "code-line-numbers"=FALSE}
+::: {.callout-note}
+Los _callouts_ son una forma de destacar contenido.  
+:::
+```
+
+## Callouts: Tipos
+
+:::: {layout="[[-25,50,-25],[50, 50], [50,50]]"}
+
+::: {.callout-note}
+`.callout-note`
+:::
+
+::: {.callout-warning}
+`.callout-warning`
+:::
+
+::: {.callout-important}
+`.callout-important`
+:::
+
+::: {.callout-tip}
+`.callout-tip`
+:::
+
+::: {.callout-caution}
+`.callout-caution`
+:::
+
+::::
+
+## {background-color=var(--ex-bg) .center .scrollable}
+
+Crea el siguiente _callout_ (`.callout-important`)
+
+:::: {.card}
+::: {.callout-important}
+Esto es importante.
+:::
+::::
+
+
+
+<details>
+    <summary>
+**Solución**
+    </summary>
+
+``` {md "code-line-numbers"=FALSE}
+::: {.callout-important}
+Esto es importante.
+:::
+```
+
+</details>
+
+
+
+## Callouts: Título personalizado
+
+\
+
+::: {.callout-note}
+## Utilidad de los _callouts_
+Son una forma de destacar contenidos
+:::
+
+\
+
+. . . 
+
+
+``` {md "code-line-numbers"=FALSE}
+::: {.callout-note}
+## Utilidad de los _callouts_
+Son una forma de destacar contenidos
+:::
+```
+
+## Callouts: Colapsar
+<!-- 
+\
+
+::: {.callout-note collapse="true"}
+## Utilidad de los _callouts_
+Son una forma de destacar contenidos
+::: -->
+
+\
+
+. . . 
+
+
+``` {md "code-line-numbers"=FALSE}
+::: {.callout-note collapse="true"}
+## Utilidad de los _callouts_
+Son una forma de destacar contenidos
+:::
+```
+
+## {background-color=var(--ex-bg) .center .scrollable }
+
+
+Duplica el _callout_ anterior y añade el código necesario para conseguir:
+
+::: {.nonincremental}
+- Título "Muy importante"
+- Colapsable (`collapse="true"`)
+:::
+
+
+<details>
+    <summary>
+**Solución**
+    </summary>
+
+``` {md "code-line-numbers"=FALSE}
+::: {.callout-important collapse="true"}
+## Muy importante
+Esto es importante.
+:::
+```
+
+</details>
+
+# Código {background-color=var(--presentation-heading-color)}
+
+
+## Código (`verbatim`)
+
+\
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Sintaxis**
+
+\
+
+````
+```
+x = 1
+y = 2
+
+# Sumar
+z = x + y 
+
+# Imprimir
+print(x+y)
+```
+````
+:::
+
+::: {.column width="50%"}
+**Resultado**
+
+\
+
+
+```
+x = 1
+y = 2
+
+# Sumar
+z = x + y 
+
+# Imprimir
+print(x+y)
+```
+:::
+::::
+
+
+
+## Código: Resaltado sintaxis
+
+\ 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Sintaxis**
+
+\
+
+````
+```python
+x = 1
+y = 2
+
+# Sumar
+z = x + y 
+
+# Imprimir
+print(x+y)
+```
+````
+
+:::
+
+::: {.column width="50%"}
+**Resultado**
+
+\
+
+
+```python
+x = 1
+y = 2
+
+# Sumar
+z = x + y 
+
+# Imprimir
+print(x+y)
+```
+
+:::
+
+::::
+
+## Código: Ejecución
+
+
+\
+
+::::: {.columns}
+
+:::: {.column width="50%"}
+**Sintaxis**
+
+\
+
+
+````
+```{{python}}
+x = 1
+y = 2
+
+# Sumar
+z = x + y 
+
+# Imprimir
+print(x+y)
+```
+````
+
+
+::::
+
+:::: {.column width="50%"}
+**Resultado**
+
+\
+
+
+```{python}
+#| eval: true
+x = 1
+y = 2
+
+# Sumar
+z = x + y 
+
+# Imprimir
+print(x+y)
+```
+::::
+
+:::::
+
+# Referencias cruzadas {background-color=var(--presentation-heading-color)}
+
+## Referencias cruzadas: Ejemplo
+
+\ 
+
+
+
+![Logo de Quarto](images/quarto-logo.png){#fig-quarto height="5%"}
+
+\
+
+::: {layout="[[-48,2,-48]]"}
+...
+:::
+
+\
+
+La @fig-quarto muestra el logo de Quarto.
+
+
+## Referencias cruzadas: Sintaxis
+
+\
+
+__Crear__
+
+`#<tipo>-<identificador>`
+
+\
+
+. . . 
+
+__Citar__
+
+`@<tipo>-<identificador>`
+
+
+## Referencias cruzadas: Algunos tipos
+
+\
+
+
+Elemento | `<tipo>`
+---------|---------
+Figuras | `fig`
+Tablas  | `tbl`
+Ecuaciones | `eq`
+Secciones | `sec`
+
+
+
+
+# Teoremas {background-color=var(--presentation-heading-color)}
+
+
+## Teoremas: Ejemplo
+
+\
+
+::: {#thm-ptg}
+## Teorema de Pitágoras
+En un triángulo rectángulo con hipotenusa de longitud $h$ y catetos de longitudes $c_1$ y $c_2$ se cumple que
+$$
+h^2 = c_1^2 + c_2^2
+$$
+:::
+
+El @thm-ptg, conocido como Teorema de Pitágoras, es probablemente uno de los más famosos de la historia de las matemáticas.
+
+
+## Teoremas: Ejemplo
+
+\
+
+
+```{md, "code-line-numbers"=FALSE}
+::: {#thm-ptg}
+## Teorema de Pitágoras
+En un triángulo rectángulo con hipotenusa de longitud $h$ y catetos de longitudes $c_1$ y $c_2$ se cumple que
+$$
+h^2 = c_1^2 + c_2^2
+$$
+:::
+
+El @thm-ptg, conocido como Teorema de Pitágoras, es probablemente uno de los más famosos de la historia de las matemáticas.
+```
+
+## Teoremas: Algunos tipos
+
+\
+
+Nombre | `<tipo>`
+-------|---------
+Teorema | `thm`
+Definición | `def`
+Ejemplo | `exm`
+Ejercicio | `exr`
+
+## Demostraciones y soluciones
+
+\
+
+::: {layout="[[50,50]]"}
+```{md, "code-line-numbers"=FALSE}
+::: {.solution}
+Bla, bla, bla.
+:::
+```
+
+```{md, "code-line-numbers"=FALSE}
+::: {.proof}
+Bla, bla, bla.
+:::
+```
+
+:::
+
+
+# Más información {background-color=var(--presentation-heading-color)}
+
+---
+
+## Ecuaciones
+
+\
+
+Más información sobre ecuaciones
+
+::: {.nonincremental}
+- En la [documentación de Quarto](https://quarto.org/docs/authoring/markdown-basics.html#equations)
+- En el [manual de Pandoc](https://www.uv.es/wikibase/doc/cas/pandoc_manual_2.7.3.wiki?121)
+:::
+
+## Listas
+
+\
+
+Más información sobre listas
+
+::: {.nonincremental}
+- En la [documentación de Quarto](https://quarto.org/docs/authoring/markdown-basics.html#lists)
+- En el [manual de Pandoc](https://www.uv.es/wikibase/doc/cas/pandoc_manual_2.7.3.wiki?75)
+:::
+
+## Tablas
+
+\
+
+Más información sobre tablas
+
+::: {.nonincremental}
+- En la [documentación de Quarto](https://quarto.org/docs/authoring/tables.html)
+- En el [manual de Pandoc](https://www.uv.es/wikibase/doc/cas/pandoc_manual_2.7.3.wiki?89)
+:::
+
+## Links e imágenes
+
+\
+
+Más información sobre links e imágenes
+
+::: {.nonincremental}
+- En la [documentación de Quarto](https://quarto.org/docs/authoring/markdown-basics.html#links-images)
+- En el manual de Pandoc: [links](https://www.uv.es/wikibase/doc/cas/pandoc_manual_2.7.3.wiki?123), [imágenes](https://www.uv.es/wikibase/doc/cas/pandoc_manual_2.7.3.wiki?129)
+:::
+
+## Vídeos
+
+\
+
+Más información sobre vídeos en la [documentación de Quarto](https://quarto.org/docs/authoring/videos.html)
+
+## Callouts
+
+\
+
+Más información en la documentación de Quarto sobre
+
+::: {.nonincremental}
+- Callouts [aquí](https://quarto.org/docs/authoring/callouts.html) y [aquí](https://quarto.org/docs/output-formats/html-themes.html#callouts)
+- [Otros tipos de bloques](https://quarto.org/docs/authoring/markdown-basics.html#other-blocks) 
+:::
+
+
+## Código 
+
+\
+
+Más información sobre ejecución de código en el capítulo *Computations* de la [guía de Quarto](https://quarto.org/docs/guide/). Algunas secciones:
+
+::: {.nonincremental}
+- [Usar Python](https://quarto.org/docs/computations/python.html)
+- [Usar R](https://quarto.org/docs/computations/r.html)
+- [Opciones de ejecución](https://quarto.org/docs/computations/execution-options.html)
+:::
+
+## Referencias cruzadas y Teoremas
+
+\
+
+Más información sobre Referencias cruzadas y Teoremas
+
+::: {.nonincremental}
+- En la [documentación de Quarto](https://quarto.org/docs/authoring/cross-references.html)
+- En la documentación del [filtro de Pandoc `pandoc-crossrefs`](https://lierdakil.github.io/pandoc-crossref/)
+:::
