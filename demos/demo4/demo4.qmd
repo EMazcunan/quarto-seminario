@@ -10,5 +10,4 @@ format:
         keep-tex: true
 ---
 
-
 Hola Quarto

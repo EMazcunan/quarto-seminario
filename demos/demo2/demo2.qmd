@@ -6,5 +6,4 @@ format:
     pdf: default    
 ---
 
-
 Hola Quarto

@@ -98,3 +98,14 @@ $dark-bg-code-color: #ffa07a !default;
   max-width: none;
   max-height: none;
 }
+
+.reveal .sep-dot {
+  height:5px;
+  width:5px;
+  background-color: $dark-bg-text-color;
+  border-radius:50%;
+  border:1px solid;
+  display:inline-block;
+  vertical-align:middle;
+  margin:10px;
+}

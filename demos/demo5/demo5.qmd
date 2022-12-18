@@ -1,0 +1,30 @@
+---
+title: Introducción a Quarto 
+author: Eva María Mazcuñán Navarro
+toc: true
+format:
+    html: 
+        theme: 
+            light: flatly
+            dark: darkly
+    pdf:
+        keep-tex: true
+---
+
+Hola Quarto
+
+# Primera sección
+
+Lorem ipsum dolor sit amet, maecenas facilisis quis sodales porttitor, interdum malesuada sociis augue aliquam? Facilisis nisi enim erat consectetur habitasse nisi ipsum. Ut amet habitant vel sed sem donec potenti eros donec sed. Penatibus pretium viverra nunc a in feugiat nam eros donec lectus? Massa non massa nisl eget. Pretium volutpat, egestas. Condimentum nec ac diam et in dapibus nisl eros, orci dui.
+
+Sed gravida, sapien orci erat platea, potenti. Etiam elementum platea aenean habitasse scelerisque arcu. A enim vehicula nostra ipsum himenaeos vel dolor placerat cubilia volutpat nec. Tristique lectus cum. Torquent habitasse finibus feugiat ac primis diam? Dolor vel malesuada felis justo donec sagittis ligula. Class lacus amet ridiculus nec sed a. Porta eros nisl ut sodales elit. Aliquam porta etiam sit et eu id. Lorem per elit varius ridiculus mauris lacinia.
+
+At euismod massa scelerisque in, pellentesque. Est, sagittis cum, euismod ligula suspendisse nec. Nunc eu pharetra venenatis. Eget amet suscipit mauris id at vel eros, ad sed mauris maecenas. Ut sed, taciti, ultrices taciti fames. Purus congue dictum in tempus. A, est massa nisi ut lacinia metus suscipit in nec. Tortor pulvinar aliquet orci aliquam, ante ut ultrices nascetur nec mollis eu sem id. Orci mauris lacinia non vivamus a interdum.
+
+# Segunda sección
+
+Nunc gravida aliquet eros lectus taciti vitae imperdiet. Tincidunt, metus felis dolor, iaculis netus, in. Diam lectus amet, sed, nunc nisi et justo sodales. Himenaeos conubia netus eu risus turpis lacinia in. Ut sapien nisl massa fermentum sed sed tempor id fringilla. Vulputate sociosqu faucibus potenti nullam faucibus molestie urna eget. Dapibus dui eget vestibulum sit. Primis sed arcu pharetra sit vel. Mauris nullam commodo tempus eget egestas natoque eget non tellus erat. Parturient lorem per, sed mattis primis velit, sodales fringilla.
+
+Cursus gravida metus ante nibh. Augue a per leo efficitur donec, ante leo. Nulla non sociis egestas vel curae vehicula. Nec eget curae ut neque adipiscing congue curabitur consequat. Posuere euismod nulla velit imperdiet sapien arcu in sed. Torquent sed magna laoreet ipsum volutpat! Inceptos tellus pellentesque nulla augue fermentum mi ac potenti vel eu pellentesque. Eu eget velit cras tincidunt interdum convallis porta mi dui. Ligula accumsan, consequat ut ullamcorper finibus leo per condimentum donec. Tempor ac ligula a himenaeos ut vitae facilisis egestas fames eu vel, quis.
+
+Justo torquent vitae vel sed ac, aliquam nulla id. Felis nulla enim leo tellus commodo vestibulum nulla interdum sociis donec amet amet. Pellentesque nec massa in sed vestibulum curae ullamcorper lacus? Curae nec suspendisse elementum congue vestibulum ac. In cubilia mi lorem auctor duis amet ex in sociis ac euismod. Tellus quis sed mauris phasellus ac vulputate. Sed odio interdum fermentum cursus fusce. Donec sit himenaeos hac lorem ut. Hendrerit curabitur interdum ut! Nisl sed dui vitae risus efficitur tempor quisque fringilla vel. Placerat massa turpis fermentum. Egestas, viverra pellentesque quisque neque lacinia cras natoque sed sem placerat. Senectus tempor nullam posuere, sit pharetra eu aliquam. Sapien nullam tristique dolor blandit odio ultricies inceptos sed. Ac elit quam in egestas pharetra tellus a per in ac. Amet natoque eu tempor, arcu! Torquent mi id in ut.
