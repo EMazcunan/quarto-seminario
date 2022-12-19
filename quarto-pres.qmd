@@ -131,6 +131,53 @@ Markdown
 
 ::::
 
+## Ejemplo `.qmd` 
+
+\
+
+::: {.fragment fragment-index=1 .fade-in-then-remove}
+```{md}
+#| file: "demos/demo0/demo0.qmd"
+```
+:::
+
+::: {.fragment fragment-index=2 .fade-in-then-remove}
+```{md}
+#| file: "demos/demo0/demo0.qmd"
+#| code-line-numbers: "1-4"
+```
+:::
+
+
+::: {.fragment fragment-index=2 .fade-in-then-remove}
+
+\
+
+Cabecera YAML
+:::
+
+::: {.fragment fragment-index=3 .fade-in-then-remove}
+```{md}
+#| file: "demos/demo0/demo0.qmd"
+#| code-line-numbers: "6"
+```
+:::
+
+
+::: {.fragment fragment-index=3 .fade-in-then-remove}
+
+\
+
+Contenidos (Markdown)
+:::
+
+
+## Flujo de trabajo
+
+\
+
+![](images/vscode-render0.png){style="border:1px solid gray"}
+
 
 # Tipos de documentos {background-color=var(--presentation-heading-color)}
 
