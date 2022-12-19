@@ -13,11 +13,10 @@ format:
         # footer: "{{< fa brands github >}}" 
         # logo: images/quarto.png
         css: "styles/style.css"
-        filters:
-            - filters/include-code-files.lua      
-    pdf:
-        keep-tex: true
-        toc: true
+        # filters:
+        #     - filters/include-code-files.lua    
+        # slide-number: c/t	
+
 execute: 
   eval: false
   echo: true
@@ -101,10 +100,10 @@ editor:
 {{< latex >}} \ 
 :    
     ```{tex, "code-line-numbers"=FALSE}
-    \texit{Texto en itálica}
+    \textit{Texto en itálica}
     ```
 :::
-
+ 
 
 :::{.fragment}
 \
@@ -186,11 +185,26 @@ Markdown
 [quarto.org](https://quarto.org){style="color:#ffa07a"}
 :::
 
+# {data-menu-title="Gracias"  background-color=var(--presentation-heading-color)}
 
 
-# Primeros pasos  {background-color=var(--presentation-heading-color)}
+\
 
-## Instalación 
+::: {.r-fit-text}
+**¡Gracias por la atención!** 
+:::
+
+\
+
+::: {style="text-align:center;font-size:2em;color:#f75035"}
+{{< fa heart >}}
+:::
+
+
+
+# Primeros pasos  {visibility="uncounted" background-color=var(--presentation-heading-color)}
+
+## Instalación {visibility="uncounted"}
 
 \
 [**PASO 1**]{style="color:var(--presentation-heading-color);"}
@@ -222,11 +236,11 @@ con extensión [Quarto](https://marketplace.visualstudio.com/items?itemName=quar
 
 :::
 
-## {background-image="images/vscode-render2.png" background-size="cover" background-position="0 0" data-menu-title="VS Code"}
+## {visibility="uncounted" background-image="images/vscode-render2.png" background-size="cover" background-position="0 0" data-menu-title="VS Code"}
 
 
 
-## Ejemplo `.qmd`
+## Ejemplo `.qmd` {visibility="uncounted"}
 
 \
 
@@ -267,7 +281,7 @@ Contenidos (Markdown)
 :::
 
 
-## Resultado
+## Resultado {visibility="uncounted"}
 
 ```{=html}
 <div class="r-stretch iframe-container">    
@@ -278,7 +292,7 @@ Contenidos (Markdown)
 ```
 
 
-## Varios formatos
+## Varios formatos {visibility="uncounted"}
 
 \
 
@@ -296,7 +310,7 @@ Contenidos (Markdown)
 :::
 
 
-## Resultado
+## Resultado {visibility="uncounted"}
 
 ```{=html}
 <div class="r-stretch iframe-container">    
@@ -308,7 +322,7 @@ Contenidos (Markdown)
 
 
 
-## Formatos con opciones
+## Formatos con opciones {visibility="uncounted"}
 
 
 ::: {.fragment fragment-index=1 .fade-in-then-remove}
@@ -338,7 +352,7 @@ Contenidos (Markdown)
 [Conserva el archivo `.tex` generado]{.fragment fragment-index=3 .fade-in-then-remove}
 
 
-## Resultado
+## Resultado {visibility="uncounted"}
 
 ```{=html}
 <div class="r-stretch iframe-container">    
@@ -349,7 +363,7 @@ Contenidos (Markdown)
 ```
 
 
-## Tema claro/oscuro
+## Tema claro/oscuro {visibility="uncounted"}
 
 
 
@@ -367,7 +381,7 @@ Contenidos (Markdown)
 :::
 
 
-## Resultado
+## Resultado {visibility="uncounted"}
 
 ```{=html}
 <div class="r-stretch iframe-container">    
@@ -377,7 +391,7 @@ Contenidos (Markdown)
 </div>
 ```
 
-## Secciones e Índice {.scrollable}
+## Secciones e Índice {visibility="uncounted" .scrollable}
 
 
 
@@ -388,7 +402,7 @@ Contenidos (Markdown)
 
 
 
-## Resultado
+## Resultado {visibility="uncounted"}
 
 ```{=html}
 <div class="r-stretch iframe-container">    
@@ -398,9 +412,9 @@ Contenidos (Markdown)
 </div>
 ```
 
-# Quarto desde R Markdown {background-color=var(--presentation-heading-color)}
+# Quarto desde R Markdown {visibility="uncounted" background-color=var(--presentation-heading-color)}
 
-## [Announcing Quarto](https://posit.co/blog/announcing-quarto-a-new-scientific-and-technical-publishing-system/)
+## [Announcing Quarto](https://posit.co/blog/announcing-quarto-a-new-scientific-and-technical-publishing-system/) {visibility="uncounted"}
 
 
 \
@@ -412,9 +426,9 @@ Contenidos (Markdown)
 > [...] most existing R Markdown documents can be rendered unmodified with Quarto
 
 
-# Quarto desde {{< latex >}} {background-color=var(--presentation-heading-color)}
+# Quarto desde {{< latex >}} {visibility="uncounted" background-color=var(--presentation-heading-color)}
 
-## Ecuaciones
+## Ecuaciones {visibility="uncounted"}
 
 \
 
@@ -424,7 +438,7 @@ Sintaxis | Resultado
 `$$ ... $$`| Modo _display_ 
 
 
-## Formato PDF
+## Formato PDF {visibility="uncounted"}
 
 
 `.tex` | `.qmd`
@@ -434,7 +448,7 @@ Preámbulo | [`format.pdf.include-in-header` ]{.fragment fragment-index=2}
 Contenidos | [Respeta {{< latex >}} _crudo_ <br> Omitir `\maketitle` y `\tableofcontents`]{.fragment fragment-index=3}
 
 
-## Formato HTML
+## Formato HTML {visibility="uncounted"}
 
 \ 
 
@@ -445,7 +459,7 @@ Contenidos | [Respeta {{< latex >}} _crudo_ <br> Omitir `\maketitle` y `\tableof
 - Hay que convertir {{< latex >}} a Markdown/Quarto. 
   <br>  Quarto (via Pandoc) lo traducirá a {{< latex >}} y a HTML.
 
-## Ejemplo - Formato texto 
+## Ejemplo - Formato texto {visibility="uncounted"}
 
 
 ::: {.nonincremental}
@@ -473,7 +487,7 @@ Markdown
 :::
 ::::
 
-## Ejemplo - Secciones 
+## Ejemplo - Secciones {visibility="uncounted"}
 
 
 ::: {.nonincremental}
@@ -504,7 +518,7 @@ Markdown
 ::::
 
 
-## Ejemplo - Listas 
+## Ejemplo - Listas {visibility="uncounted"}
 
 
 ::: {.nonincremental}
@@ -536,7 +550,7 @@ Markdown
 :::
 ::::
 
-## Ejemplo - Idioma del documento 
+## Ejemplo - Idioma del documento {visibility="uncounted"}
 
 ::: {.nonincremental}
 
@@ -563,7 +577,7 @@ Quarto
 :::
 ::::
 
-## De {{< latex >}} a Quarto
+## De {{< latex >}} a Quarto {visibility="uncounted"}
 
 Quarto tiene soporte nativo para:
 
@@ -580,7 +594,7 @@ Quarto tiene soporte nativo para:
 
 Si no es suficiente ... extensiones
 
-## Extensiones
+## Extensiones {visibility="uncounted"}
 
 \
 
@@ -599,21 +613,6 @@ Si no es suficiente ... extensiones
 
 :::
 
-
-# {data-menu-title="Gracias" visibility="uncounted" background-color=var(--presentation-heading-color)}
-
-
-\
-
-::: {.r-fit-text}
-**¡Gracias por la atención!** 
-:::
-
-\
-
-::: {style="text-align:center;font-size:2em;color:#f75035"}
-{{< fa heart >}}
-:::
 
 
 
@@ -651,7 +650,7 @@ __Ejemplos__
 # Callouts {visibility="uncounted"  background-color=var(--presentation-heading-color)}
 
 
----
+## {visibility="uncounted"}
 
 \ 
 
